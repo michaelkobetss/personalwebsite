@@ -1,22 +1,27 @@
 <template>
   <v-app>
     <v-main>
-      <HelloTab/>
+      <WelcomeMessage/>
       <TabsContainer/>
+      
     </v-main>
   </v-app>
+  <FooterComponent />
 </template>
 
 <script>
-import HelloTab from './components/HelloTab.vue'
+import WelcomeMessage from './components/WelcomeMessage.vue'
 import TabsContainer from './components/TabsContainer.vue';
+import FooterComponent from "./components/FooterComponent.vue"; 
+
 
 export default {
   name: 'App',
 
   components: {
-    HelloTab,
-    TabsContainer
+    WelcomeMessage,
+    TabsContainer,
+    FooterComponent
   },
 
   data: () => ({

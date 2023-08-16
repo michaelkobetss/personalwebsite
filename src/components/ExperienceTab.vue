@@ -1,7 +1,6 @@
 <template>
     <div>
-      <!-- Your template content here -->
-    </div>
+experiencetab    </div>
   </template>
   
   <script>
