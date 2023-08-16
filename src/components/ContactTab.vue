@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height fluid>
+  <v-container fill-height fluid style="height:100vh">
     <v-row align="center" justify="center">
       <v-col cols="12" md="6">
         <v-card class="card">
@@ -101,6 +101,7 @@ export default {
   max-width: 800px;
   padding: 40px;
   text-align: center;
+  
 }
 
 .card-title {
