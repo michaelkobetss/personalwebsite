@@ -1,5 +1,5 @@
 <template>
-    <v-footer
+    <!-- <v-footer
       class="footer"
       app
     >
@@ -13,7 +13,8 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-footer>
+    </v-footer> -->
+    <div></div>
   </template>
   
   <script>

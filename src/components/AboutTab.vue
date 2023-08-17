@@ -4,7 +4,7 @@
       <v-row align="center" justify="center">
         <v-column cols="12">
           <h2 class="about-heading">About me</h2>
-          <p class="headline text-xl mb-4 line-height-lg">
+          <p class=" text-xl mb-4 line-height-lg">
             Hello, I'm <b>Michael</b>, and I'm <b>21 years old</b>. I currently
             reside in <b>Kyiv, Ukraine</b>. Initially, programming started as a
             hobby, but it has now grown into a
@@ -12,7 +12,7 @@
             been working on completing various freelance tasks and have also
             created a website for a local shop.
           </p>
-          <p class="body-1 text-lg mb-4 line-height-lg">
+          <p class="body-1 text-xl mb-4 line-height-lg">
             Besides my expertise in <font-awesome-icon icon="vuejs" /><b
               >React</b
             >, I also have experience with <font-awesome-icon icon="react" /><b
@@ -54,10 +54,10 @@
           </div>
           <div class="download-cv-container">
             <a
-              href="../assets/Michael Kobets CV.pdf"
+              href="https://flowcv.com/resume/nj0kda5ikf"
               target="_blank"
               class="download-cv-button"
-              >Download my CV</a
+              >Open my CV</a
             >
           </div>
         </v-column>
@@ -74,16 +74,17 @@ export default {
 </script>
 
 <style scoped>
+
 .about-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .about-heading {
-  font-size: 5rem;
+  font-size: 4rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -105,7 +106,11 @@ export default {
 .v-container {
   max-width: 70%;
 }
-
+@media screen and (max-width: 768px) {
+  .v-container {
+    max-width: 95%;
+  }
+}
 .hobbies {
   text-align: center;
   margin-top: 20px;

@@ -3,17 +3,25 @@
     <v-row class="d-flex align-center justify-center" style="height: 100vh;">
       <v-col cols="12" md="6" class="text-left">
         <div>
-          <v-typography class="display-2 mb-3 headline" style="font-size: 3rem;">
-            Hello there, my name is
-          </v-typography>
-          <h1 class="display-2 font-weight-bold mb-3 title" style="font-size: 7rem;">
-            Michael Kobets
-          </h1>
-          <v-typography class="display-2 mb-3 subheading" style="font-size: 4rem;">
-            and I am a <span class="font-weight-bold">Front-End developer</span>
-          </v-typography>
+          <v-row class="mb-3">
+            <v-col cols="12">
+              <h2 class="display-2 mb-3 headline" style="font-size: 2rem;">
+                Hello there, my name is
+              </h2>
+            </v-col>
+            <v-col cols="12">
+              <h1 class="display-2 font-weight-bold mb-3 title" style="font-size: 4rem;">
+                Michael Kobets
+              </h1>
+            </v-col>
+            <v-col cols="12">
+              <h2 class="display-2 mb-3 subheading" style="font-size: 2.5rem;">
+                and I am a <span class="font-weight-bold">Front-End developer</span>
+              </h2>
+            </v-col>
+          </v-row>
         </div>
-        <v-icon class="jumping-arrow" size="80">mdi-arrow-down</v-icon>
+        <v-icon class="jumping-arrow" size="60" @click="scrollDown">mdi-arrow-down</v-icon>
       </v-col>
     </v-row>
   </v-container>
@@ -25,12 +33,30 @@ export default {
   methods: {
     scrollDown() {
       // Implement scrolling logic here
+      // For example, you can use the window.scrollTo() function
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
     }
   }
 };
 </script>
 
 <style>
+/* Larger text for screens with width greater than 992px (MD breakpoint) */
+@media (min-width: 993px) {
+  .headline {
+    font-size: 3rem !important; /* Adjust the desired font size */
+  }
+  .title {
+    font-size: 5rem !important; /* Adjust the desired font size */
+  }
+  .subheading {
+    font-size: 3rem !important; /* Adjust the desired font size */
+  }
+}
+
 .jumping-arrow {
   position: fixed;
   bottom: 20px;
@@ -38,7 +64,7 @@ export default {
   animation: jumpArrow 1.5s infinite;
 }
 .jumping-arrow:hover {
- cursor: pointer;
+  cursor: pointer;
 }
 
 @keyframes jumpArrow {

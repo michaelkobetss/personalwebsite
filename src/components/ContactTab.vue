@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height fluid style="height:100vh">
+  <v-container fill-height fluid style="min-height: 100vh">
     <v-row align="center" justify="center">
       <v-col cols="12" md="6">
         <v-card class="card">
@@ -9,8 +9,8 @@
               <img :src="PhotoCV" alt="PhotoCV" />
             </v-avatar>
 
-            <v-typography>
-              <p class="text">
+            <div class="text line-height-lg">
+              <p>
                 Thanks for visiting! Send a connection request on
                 <a
                   href="https://www.linkedin.com/in/michaelkobetss/"
@@ -28,7 +28,7 @@
                   title="michaelkobetss@gmail.com"
                 >send me an email</a>.
               </p>
-            </v-typography>
+            </div>
 
             <v-row>
               <v-col cols="12">
@@ -53,7 +53,7 @@
                   <v-icon left>mdi-telegram</v-icon>Contact on Telegram
                 </v-btn>
               </v-col>
-              <v-col cols="12" >
+              <v-col cols="12">
                 <v-btn
                   href="mailto:michaelkobetss@gmail.com"
                   title="michaelkobetss@gmail.com"
@@ -64,7 +64,6 @@
                 </v-btn>
               </v-col>
             </v-row>
-
           </v-card-text>
         </v-card>
       </v-col>
@@ -85,6 +84,9 @@ export default {
 
 <style scoped>
 /* Your component styles here */
+.line-height-lg {
+  line-height: 1.8rem;
+}
 .avatar {
   width: 200px;
   height: 200px;
@@ -101,28 +103,31 @@ export default {
   max-width: 800px;
   padding: 40px;
   text-align: center;
-  
 }
 
 .card-title {
   font-size: 2rem; /* Adjust font size using Vuetify typography classes */
   margin-bottom: 0; /* Use Vuetify margin class */
 }
-.text {
-  font-size: 1.2rem;
+
+.text p {
+  font-size: 1.4rem;
   margin: 16px 0; /* Use Vuetify margin class */
 }
+
 .connect-button {
   max-width: 300px; /* Set the maximum width for the buttons */
   width: 100%;
-  margin:  auto;
+  margin: auto;
 }
+
 .telegram-button {
   background-color: #26a5e4; /* Telegram Blue Color */
   color: white;
 }
+
 .email-button {
-  background-color: #D14836; /* Gmail Red Color */
+  background-color: #d14836; /* Gmail Red Color */
   color: white;
 }
 </style>
