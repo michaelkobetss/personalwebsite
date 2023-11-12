@@ -37,14 +37,27 @@ export default {
     };
   },
 
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+
+ 
+
   methods: {
     scrollDown() {
-      this.isArrowClicked = !this.isArrowClicked;
       window.scrollTo({
         top: window.innerHeight,
         behavior: 'smooth'
       });
-    }
+    },
+    
+    handleScroll() {
+      console.log("handlescroll worked")
+      if (window.scrollY) {
+        this.isArrowClicked = true;
+        window.removeEventListener('scroll', this.handleScroll);
+      } 
+    },
   }
 };
 </script>
