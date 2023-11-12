@@ -21,7 +21,7 @@
             </v-col>
           </v-row>
         </div>
-        <v-icon class="jumping-arrow" size="60" @click="scrollDown">mdi-arrow-down</v-icon>
+        <v-icon class="jumping-arrow" :class="{ 'clicked': isArrowClicked }" size="60" @click="scrollDown">mdi-arrow-down</v-icon>
       </v-col>
     </v-row>
   </v-container>
@@ -30,10 +30,16 @@
 <script>
 export default {
   name: 'HelloTab',
+
+  data() {
+    return {
+      isArrowClicked: false,
+    };
+  },
+
   methods: {
     scrollDown() {
-      // Implement scrolling logic here
-      // For example, you can use the window.scrollTo() function
+      this.isArrowClicked = !this.isArrowClicked;
       window.scrollTo({
         top: window.innerHeight,
         behavior: 'smooth'
@@ -44,16 +50,17 @@ export default {
 </script>
 
 <style>
-/* Larger text for screens with width greater than 992px (MD breakpoint) */
 @media (min-width: 993px) {
   .headline {
-    font-size: 3rem !important; /* Adjust the desired font size */
+    font-size: 3rem !important;
   }
+
   .title {
-    font-size: 5rem !important; /* Adjust the desired font size */
+    font-size: 5rem !important;
   }
+
   .subheading {
-    font-size: 3rem !important; /* Adjust the desired font size */
+    font-size: 3rem !important;
   }
 }
 
@@ -63,19 +70,29 @@ export default {
   right: 20px;
   animation: jumpArrow 1.5s infinite;
 }
+
 .jumping-arrow:hover {
   cursor: pointer;
 }
+.clicked {
+  display: none;
+}
 
 @keyframes jumpArrow {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-20px);
   }
+
   60% {
     transform: translateY(-10px);
   }
-}
-</style>
+}</style>

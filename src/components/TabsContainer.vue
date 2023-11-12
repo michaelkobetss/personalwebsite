@@ -3,7 +3,7 @@
     <v-tabs centered grow>
       <!-- Tab Items -->
       <v-tab to="/about">About</v-tab>
-      <v-tab to="/experience">Experience</v-tab>
+      <!-- <v-tab to="/experience">Experience</v-tab> -->
       <v-tab to="/contact">Contact</v-tab>
     </v-tabs>
     <router-view></router-view>
